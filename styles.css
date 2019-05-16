@@ -1,0 +1,83 @@
+body {
+  background-color: #fbe8a6;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.navbar {
+  background-color: #f4976c;
+}
+
+.navbar > .navbar-links {
+  display: flex;
+  justify-content: space-around;
+  margin: 0rem 18rem;
+}
+
+.navbar > .navbar-links > h1 {
+  cursor: pointer;
+}
+
+.navbar > .navbar-links > h1:hover {
+  color: white;
+}
+
+.container {
+  background-color: #b4dfe5;
+  border-radius: 1rem;
+  margin: 2rem 18rem;
+  padding: 1rem 1rem;
+}
+
+#form-container > form > h3 {
+  margin: 0;
+}
+
+#form-container > form > div {
+  background-color: #303c6c;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  padding: 1rem;
+}
+
+#form-container > form > div > input {
+  border: 2px solid #f4976c;
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  padding: 0.4rem 0.6rem;
+}
+
+#form-container > form > div > input[type=text] {
+  flex-grow: 9;
+  min-width: 5rem;
+}
+
+#form-container > form > div > input[type=submit] {
+  background-color: #d2fdff;
+  flex-grow: 1;
+  margin-left: 1rem;
+}
+
+#form-container > form > div > input[type=submit]:hover {
+  background-color: #f4976c;
+  border: 2px solid #d2fdff;
+  color: white;
+  cursor: pointer;
+}
+
+#messages-container > .message {
+  background-color: #303c6c;
+  border-radius: 1rem;
+  color: white;
+  padding: 1rem;
+}
+
+#messages-container > .message:not(:first-of-type) {
+  margin-top: 0.5rem;
+}
