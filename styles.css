@@ -4,6 +4,10 @@ body {
   margin: 0;
 }
 
+input:focus {
+  outline: none;
+}
+
 .hidden {
   display: none;
 }
@@ -58,17 +62,29 @@ body {
   min-width: 5rem;
 }
 
-#form-container > form > div > input[type=submit] {
+#form-container > form > div > input.button {
   background-color: #d2fdff;
   flex-grow: 1;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 }
 
-#form-container > form > div > input[type=submit]:hover {
+#form-container > form > div > input.button:hover {
   background-color: #f4976c;
   border: 2px solid #d2fdff;
   color: white;
   cursor: pointer;
+}
+
+#form-container > form > div > input.button:active {
+  background-color: #dd855d;
+}
+
+#buttons-container {
+  margin-bottom: 1rem;
+}
+
+#buttons-container > button {
+  font-size: 0.8rem;
 }
 
 #messages-container > .message {

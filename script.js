@@ -12,16 +12,37 @@ const navigateTo = page => {
   document.getElementById(page).style.display = 'block';
 };
 
-const appendMessage = message => {
+const displayMessages = display => {
+  const messages = document.getElementById('messages-container');
+  display
+    ? messages.style.display = 'block'
+    : messages.style.display = 'none';
+};
+
+const addMessage = (message, pre) => {
   const newDiv = document.createElement('div');
   const newText = document.createTextNode(message);
   newDiv.appendChild(newText);
   newDiv.classList.add('message');
-  document.getElementById('messages-container').appendChild(newDiv);
+  const messagesContainer = document.getElementById('messages-container');
+  pre
+    ? messagesContainer.prepend(newDiv)
+    : messagesContainer.appendChild(newDiv);
+};
+
+const clearMessageInput = () => {
+  document.getElementById('message-input').value = '';
+};
+
+const submitMessage = () => {
+  const newMessage = document.getElementById('message-input').value;
+  if (newMessage) addMessage(newMessage, true);
+  clearMessageInput();
+  return false;
 };
 
 window.onload = () => {
   const parsed = JSON.parse(data);
-  parsed.messages.forEach(message => appendMessage(message.contentText));
+  parsed.messages.forEach(message => addMessage(message.contentText));
   navigateTo('home');
 };
