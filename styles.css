@@ -8,10 +8,6 @@ input:focus {
   outline: none;
 }
 
-.hidden {
-  display: none;
-}
-
 .navbar {
   background-color: #f4976c;
 }
@@ -37,11 +33,11 @@ input:focus {
   padding: 1rem 1rem;
 }
 
-#form-container > form > h3 {
+#message-form > h3 {
   margin: 0;
 }
 
-#form-container > form > div {
+#message-form > div {
   background-color: #303c6c;
   border-radius: 1rem;
   display: flex;
@@ -50,32 +46,32 @@ input:focus {
   padding: 1rem;
 }
 
-#form-container > form > div > input {
+#message-form > div > input {
   border: 2px solid #f4976c;
   border-radius: 1rem;
   font-size: 1.4rem;
   padding: 0.4rem 0.6rem;
 }
 
-#form-container > form > div > input[type=text] {
-  flex-grow: 9;
+#message-form > div > input[type=text] {
+  flex-grow: 10;
   min-width: 5rem;
 }
 
-#form-container > form > div > input.button {
+#message-form > div > input.button {
   background-color: #d2fdff;
   flex-grow: 1;
   margin-left: 0.5rem;
 }
 
-#form-container > form > div > input.button:hover {
+#message-form > div > input.button:hover {
   background-color: #f4976c;
   border: 2px solid #d2fdff;
   color: white;
   cursor: pointer;
 }
 
-#form-container > form > div > input.button:active {
+#message-form > div > input.button:active {
   background-color: #dd855d;
 }
 

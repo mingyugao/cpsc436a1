@@ -10,22 +10,24 @@ const oldDivsKeyframes = [
   {transform: 'translate(0, 0)'}
 ];
 
-const hideAllPages = () => {
-  pages.forEach(page => {
-    document.getElementById(page).style = '';
-  });
+const displayElement = (element, display) => {
+  display
+    ? element.style.display = 'block'
+    : element.style.display = 'none';
 };
 
 const navigateTo = page => {
-  hideAllPages();
-  document.getElementById(page).style.display = 'block';
+  pages.forEach(page => {
+    displayElement(document.getElementById(page), false);
+  });
+  displayElement(document.getElementById(page), true);
 };
 
 const displayMessages = display => {
   const messages = document.getElementById('messages-container');
   display
-    ? messages.style.display = 'block'
-    : messages.style.display = 'none';
+    ? displayElement(messages, true)
+    : displayElement(messages, false);
 };
 
 const addMessage = (message, pre) => {
@@ -40,23 +42,25 @@ const addMessage = (message, pre) => {
   return newDiv;
 };
 
-const clearMessageInput = () => {
-  document.getElementById('message-input').value = '';
+const clearForm = () => {
+  document.getElementById('message-form').reset();
 };
 
 const submitMessage = () => {
-  const newMessage = document.getElementById('message-input').value;
   const messagesContainer = document.getElementById('messages-container');
+  const newMessage = document
+    .getElementById('message-form')
+    .elements['message']
+    .value;
   if (newMessage) {
     for (let i = 0; i < messagesContainer.children.length; i++) {
-      messagesContainer.children[i].animate(oldDivsKeyframes, 1000);
+      messagesContainer.children[i].animate(oldDivsKeyframes, 500);
     }
-    const newDiv = addMessage(newMessage, true);
+    addMessage(newMessage, true).animate(newDivKeyframes, 500);
     const msgObj = {contentText: newMessage};
     parsedData.messages.push(msgObj);
-    newDiv.animate(newDivKeyframes, 1000);
   }
-  clearMessageInput();
+  clearForm();
   return false;
 };
 

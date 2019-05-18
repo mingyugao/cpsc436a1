@@ -11,14 +11,14 @@
         <h1 onclick="navigateTo('about')">About</h1>
       </div>
     </div>
-    <div id="home" class="hidden">
-      <div id="form-container" class="container">
-        <form method="post" onsubmit="return submitMessage()">
+    <div id="home">
+      <div class="container">
+        <form id="message-form" method="post" onsubmit="return submitMessage()">
           <h3>Contribute a new message:</h3>
           <div>
-            <input id="message-input" type="text" name="message" placeholder="Compose your message">
+            <input type="text" name="message" placeholder="Compose your message">
             <input class="button" type="submit">
-            <input class="button" type="button" value="Clear" onclick="clearMessageInput()">
+            <input class="button" type="button" value="Clear" onclick="clearForm()">
           </div>
         </form>
       </div>
@@ -31,7 +31,7 @@
         </div>
       </div>
     </div>
-    <div id="about" class="hidden">
+    <div id="about">
       <div class="container">
         <p>This is the ABOUT page.</p>
         <p>
